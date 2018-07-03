@@ -10,8 +10,9 @@ module.exports = {
     md5_twice: (input) => {
         return md5(md5(input))
     },
-    retrieved_user_id: (token) => {
-        let tokenI = Token.findById(token);
+    retrieved_user_id: async (token) => {
+        let tokenI = await Token.findOne({id: token});
+        console.log(tokenI.userId)
         return tokenI && tokenI.userId || ''
     }
 }

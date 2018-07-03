@@ -13,7 +13,8 @@ module.exports = async (ctx) => {
         tokenModel.save()
         ctx.body = {
             token: token,
-            nickname: sUser.nickname
+            nickname: sUser.nickname,
+            userId: sUser.id
         }
     } else {
         throw new Error('账号密码错误')
