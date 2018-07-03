@@ -12,6 +12,8 @@ module.exports = async (ctx) => {
         article.content = newArticle.content
         article.title = newArticle.title
         article.abstract = newArticle.abstract
+        article.purpose = newArticle.purpose
+        article.classify = newArticle.classify
         await Article.update({id: article.id}, article)
     } else {
         //insert
