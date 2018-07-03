@@ -1,7 +1,7 @@
 const User = require("../../model/user")
 
 module.exports = async (ctx) => {
-    let user = ctx.request.body;
+    let user = ctx.request.body.registerForm;
     user.createTime = new Date().getTime();
     user.id = Common.utils.generate_uuid();
     user.password = Common.utils.md5_twice(user.password)

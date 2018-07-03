@@ -12,7 +12,6 @@ module.exports = {
     },
     retrieved_user_id: async (token) => {
         let tokenI = await Token.findOne({id: token});
-        console.log(tokenI.userId)
         return tokenI && tokenI.userId || ''
     }
 }

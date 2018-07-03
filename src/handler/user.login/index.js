@@ -2,7 +2,7 @@ const User = require("../../model/user")
 const Token = require("../../model/token")
 
 module.exports = async (ctx) => {
-    let user = ctx.request.body;
+    let user = ctx.request.body.loginForm;
     let sUser = await User.findOne({account: user.account})
     if (sUser && sUser.password == Common.utils.md5_twice(user.password)) {
         let token = Common.utils.generate_uuid();
